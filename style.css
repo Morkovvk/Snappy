@@ -1,0 +1,213 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  color: rgb(5, 65, 6);
+  font-family: "Segoe UI", Arial, sans-serif;
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-700px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+h1 {
+  font-size: clamp(1.75rem, 5vw + 1rem, 2.5rem);
+  color: white;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+  animation: slideIn 0.8s ease-out;
+}
+
+h2 {
+  color: purple;
+  font-size: clamp(1.25rem, 3vw + 0.5rem, 1.75rem);
+  margin-bottom: 0.75rem;
+  display: flex;
+  justify-content: center;
+}
+
+.site-header {
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("img/kroko_2.PNG");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 100vh;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.site-nav {
+  background-color: #eae1b3;
+  position: sticky;
+  z-index: 10;
+  top: 0;
+  transition: background-color 0.3s;
+
+  & .nav-toggle {
+    display: none;
+  }
+
+  & .hamburger {
+    display: block;
+    cursor: pointer;
+    font-size: 2rem;
+    text-align: right;
+  }
+
+  & ul {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    list-style: none;
+
+    & li {
+      & a {
+        color: rgb(41, 41, 25);
+        text-decoration: none;
+      }
+    }
+  }
+  & .nav-toggle:checked ~ ul {
+    display: flex; 
+  }
+}
+@media (min-width: 768px) {
+  .site-nav .hamburger {
+    display: none;
+  }
+
+  .site-nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.site-nav:hover {
+  background-color: hsl(50, 100%, 75%);
+}
+
+section {
+  margin-bottom: 2.5rem;
+}
+
+p {
+  margin-bottom: 0.5rem;
+  line-height: 1.8rem;
+}
+
+.chapter-body {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+@media (min-width: 768px) {
+  .chapter-body {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 40px;
+  }
+}
+fieldset {
+  padding: 16px 24px;
+  border: 1px solid black;
+}
+
+.chapter-section-3 {
+  position: relative;
+}
+
+.badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.answers {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+  gap: 12px;
+}
+
+.form-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.rate {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.btn {
+  align-self: center;
+  padding: 10px 55px;
+  max-width: 200px;
+  background-color: purple;
+  color: white;
+  transition: background-color 0.3s;
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  text-decoration: none;
+  color: white;
+  background-color: purple;
+  padding: 10px 15px;
+  transition: background-color 0.3s;
+  z-index: 20;
+}
+
+.back-to-top:hover,
+.btn:hover {
+  background-color: #eae1b3;
+  color: purple;
+}
+
+.back-to-top:active,
+.btn:active {
+  background-color: hsl(50, 100%, 75%);
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
