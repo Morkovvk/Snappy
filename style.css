@@ -34,7 +34,7 @@ img {
 
 h1 {
   font-size: clamp(1.75rem, 5vw + 1rem, 2.5rem);
-  color: white;
+  color: rgb(28, 232, 79);
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
   animation: slideIn 0.8s ease-out;
 }
